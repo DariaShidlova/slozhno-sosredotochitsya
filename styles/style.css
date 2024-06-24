@@ -1,5 +1,179 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  width: 375px;
+  background-image: url(../images/cover-image-dark.png);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: var(--font-family);
 }
+
+.header__theme-menu {
+  display: grid;
+  justify-content: end;
+}
+
+.rec-decor {
+  display: inline-flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  background-color: aqua;
+}
+
+.rec-decor::before {
+  content: "rec";
+  color: var(--accent-color);
+  text-transform: uppercase;
+  font-size: 18px;
+  text-align: right;
+}
+
+.rec-decor::after {
+  content: "";
+  inline-size: 9px;
+  block-size: 9px;
+  display: inline-block;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 2px 2px var(--accent-color);
+  border-radius: 50%;
+}
+
+.decorated-zone {
+  position: relative;
+  display: grid;
+  padding: 10px;
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: "";
+  display: block;
+  inline-size: 25px;
+  block-size: 25px;
+  background-color: aquamarine;
+}
+
+.decorated-zone::before {
+  justify-self: end;
+  border-inline-end: 1px solid var(--accent-color);
+  border-block-start: 1px solid var(--accent-color);
+}
+
+.decorated-zone::after {
+  justify-self: start;
+  border-inline-start: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--accent-color);
+}
+
+/*стили для кнопок*/
+
+.header__theme-menu-list {
+  list-style: none;
+  background-color: aquamarine;
+}
+
+.header__theme-menu-button {
+  color: var(--accent-color);
+  text-transform: lowercase;
+  background-color: transparent;
+  border:0;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+}
+
+/*стили для заголовков*/
+
+.page-title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  color: var(--header-text);
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header_title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  text-align: left;
+}
+
+.title-decor {
+  color: var(--text-color-dark);
+  background-color: var(--accent-color);
+}
+
+/*стили для секций*/
+.section {
+  padding: 10px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  color: var(--accent-color);
+}
+
+.title { 
+font-size: 18px;
+font-weight: 700;
+line-height: 23.4px;
+color: var(--text-color-dark);
+}
+
+.section-text {
+font-size: 18px;
+font-weight: 400;
+line-height: 23.4px;
+color: var(--text-color-light);
+}
+
+.picture {
+  display: grid;
+  justify-content: center;
+ 
+}
+
+.picture-of-sunset {
+  width: 355px;
+  height: 142px;
+}
+
+.picture-ice-cream {
+  width: 355px;
+  height: 355px;
+}
+
+.picture-of-music {
+  width: 355px;
+  height: 237px;
+}
+
+.picture-of-books {
+  width: 355px;
+  height: 355px;
+}
+
+.picture-of-street {
+  width: 355px;
+  height: 237px;
+}
+
+.footer {
+  width: 375px;
+  height: 668px;
+}
+
+.footer-text {
+  font-size: 116px;
+  font-weight: 700;
+  line-height: 95.7px;
+  color: var(--header-text);
+}
+  
