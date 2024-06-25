@@ -16,11 +16,13 @@
 }
 
 .rec-decor {
+  position: absolute;
   display: inline-flex;
   justify-content: center;
+  top: 12px;
+  right: 20px;
   gap: 10px;
   align-items: center;
-  background-color: aqua;
 }
 
 .rec-decor::before {
@@ -44,7 +46,9 @@
 .decorated-zone {
   position: relative;
   display: grid;
-  padding: 10px;
+  align-content: space-between;
+  
+  min-block-size: 25px;
 }
 
 .decorated-zone::before,
@@ -53,7 +57,6 @@
   display: block;
   inline-size: 25px;
   block-size: 25px;
-  background-color: aquamarine;
 }
 
 .decorated-zone::before {
@@ -72,19 +75,39 @@
 
 .header__theme-menu-list {
   list-style: none;
-  background-color: aquamarine;
+  margin-top: 39px;
 }
 
 .header__theme-menu-button {
   color: var(--accent-color);
   text-transform: lowercase;
   background-color: transparent;
-  border:0;
+  border: 0;
   font-size: 18px;
   margin-bottom: 10px;
+  cursor: pointer;
+  inline-size: 70px;
 }
 
 .header__theme-menu-button_active {
+  pointer-events: none;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button_active,
+.header__theme-menu-button_active:hover {
+  border: 1px solid var(--accent-color);
   pointer-events: none;
 }
 
@@ -110,7 +133,7 @@
 
 /*стили для секций*/
 .section {
-  padding: 10px;
+  width: 375px;
 }
 
 .section-title {
@@ -121,17 +144,17 @@
 }
 
 .title { 
-font-size: 18px;
-font-weight: 700;
-line-height: 23.4px;
-color: var(--text-color-dark);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  color: var(--text-color-dark);
 }
 
 .section-text {
-font-size: 18px;
-font-weight: 400;
-line-height: 23.4px;
-color: var(--text-color-light);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  color: var(--text-color-light);
 }
 
 .picture {
@@ -176,4 +199,4 @@ color: var(--text-color-light);
   line-height: 95.7px;
   color: var(--header-text);
 }
-  
+ 
