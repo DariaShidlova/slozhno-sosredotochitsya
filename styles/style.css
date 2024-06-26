@@ -1,8 +1,6 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  width: 375px;
   background-image: url(../images/cover-image-dark.png);
   background-position: center;
   background-size: cover;
@@ -19,8 +17,8 @@
   position: absolute;
   display: inline-flex;
   justify-content: center;
-  top: 12px;
-  right: 20px;
+  top: 3px;
+  right: 11px;
   gap: 10px;
   align-items: center;
 }
@@ -35,11 +33,11 @@
 
 .rec-decor::after {
   content: "";
-  inline-size: 9px;
-  block-size: 9px;
+  inline-size: 10px;
+  block-size: 10px;
   display: inline-block;
   background-color: var(--accent-color);
-  box-shadow: 0 0 2px 2px var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
   border-radius: 50%;
 }
 
@@ -47,7 +45,6 @@
   position: relative;
   display: grid;
   align-content: space-between;
-  
   min-block-size: 25px;
 }
 
@@ -93,8 +90,9 @@
   pointer-events: none;
 }
 
-.header__theme-menu-button:focus {
+.header__theme-menu-button:focus {        
   outline: none;
+  border-block-end: 1px solid var(--accent-color);
 }
 
 .header__theme-menu-button:focus-visible {
@@ -132,9 +130,6 @@
 }
 
 /*стили для секций*/
-.section {
-  width: 375px;
-}
 
 .section-title {
   font-size: 18px;
@@ -157,40 +152,51 @@
   color: var(--text-color-light);
 }
 
-.picture {
+/*стили для ссылок в тексте*/
+
+.section-link {
+  color: var(--text-color-light);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.text-shadow {
+  text-shadow: 2px 1px 0 var(--accent-color);
+}
+
+.section-link:hover {
+  text-decoration: underline;
+}
+
+.section-link:focus,
+.section-link:focus-visible {
+  outline: none;
+  border: 1px solid var(--text-color-light);
+}
+
+
+/*стили для картинок*/
+
+.section-gallery-list {
   display: grid;
-  justify-content: center;
- 
+  gap: 10px;
+
 }
 
-.picture-of-sunset {
-  width: 355px;
-  height: 142px;
+.section__list-item {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  block-size: 100%;
+  inline-size: 100%;
 }
 
-.picture-ice-cream {
-  width: 355px;
-  height: 355px;
-}
-
-.picture-of-music {
-  width: 355px;
-  height: 237px;
-}
-
-.picture-of-books {
-  width: 355px;
-  height: 355px;
-}
-
-.picture-of-street {
-  width: 355px;
-  height: 237px;
-}
 
 .footer {
-  width: 375px;
-  height: 668px;
+  display: grid;
+  align-content: space-around;
+  padding: 10px;
+  min-block-size: 100vh;
 }
 
 .footer-text {
@@ -198,5 +204,83 @@
   font-weight: 700;
   line-height: 95.7px;
   color: var(--header-text);
+  text-shadow: 2px 2px 0px var(--accent-color);
+  margin-inline-start: 4px;
+  text-align: center;
 }
+
+
+@media (width >= 768px) {
+  .header__theme-menu-list {
+    margin-top: 146px;
+  }
+
+  .page-title{
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header_title {
+    justify-self: end;
+    inline-size: clamp(364px,calc(100%/2),491px);
+  }
+    
+  .section {
+    grid-template-columns: clamp(236px, calc(100% / 3.5), 315px) 1fr;
+  }
+
+  .section-on-concentration, 
+  .section-on-methods {
+    display: grid;
+    grid-auto-flow: column;
+  }
+
+
+  .articles-list {
+    grid-column-start: span 2;
+  }
+
+  .section-title {
+    justify-self: start;
+    inline-size: clamp(236px, calc(100%/3.5), 315px);
+  }
+
+  .section-gallery-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .section-list:first-child {
+    grid-column-start: span 2;
+  }
+
+  .section-list:nth-child(2) {
+    grid-row-start: span 2;
+  }
  
+  .section-list:nth-child(3) {
+    grid-row-start: span 2;
+  }
+  .section-list:nth-child(4) {
+    grid-column-end: span 1;
+  }
+  .section-list:nth-child(5) {
+    grid-column-end: span 2;
+  }
+}
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
