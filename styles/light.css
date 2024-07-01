@@ -47,7 +47,6 @@
   color: var(--text-color-dark);
 }
 
-
 .page.theme_light .header__theme-menu-button:focus {        
   outline: none;
   border-block-end: 1px solid var(--text-color-dark);
