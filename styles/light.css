@@ -18,10 +18,6 @@
 
 .page.theme_light {
   background-image: url(../images/cover-image-light.png);
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  font-family: var(--font-family);
 }
 
 .page.theme_light .decorated-zone::before {
