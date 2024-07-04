@@ -101,7 +101,7 @@
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid var(--accent-color);
+  border: 1px solid rgba(255, 0, 112, 0.4)
 }
 
 .header__theme-menu-button_active,
@@ -164,20 +164,22 @@
   color: var(--text-color-dark);
 }
 
+.articles-list {
+  display: grid;
+  gap: 20px;
+}
+
+.articles-list-about-reasons {
+  display: grid;
+  gap: 20px;
+}
+
 .section-text {
   margin-block-start: 10px;
   font-size: 18px;
   font-weight: 400;
   line-height: 23.4px;
   color: var(--text-color-light);
-}
-
-.section-text:not(:last-child) {
-  margin-block-end: 20px;
-}
-
-.section-title-item {
-  margin-block-end: 20px;
 }
 
 /*стили для ссылок в тексте*/
@@ -193,7 +195,7 @@
 }
 
 .section-link:hover {
-  text-decoration: underline;
+  border-bottom: 2px solid var(--text-color-light);
 }
 
 .section-link:focus,
@@ -246,26 +248,20 @@
       inset-block-start: 22px;
   }
 
-  .header__theme-menu {
-      margin-block-end: 36%;
-  }
-
   .decorated-zone {
       padding: 20px;
   }
 
   .page-title {
       font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-      position: absolute;
       display: grid;
-      align-self: center;
-      margin-block-start: 0;
+      margin-block-start: 45px;
+      margin-inline-start: -20px;
   }
 
   .header_title {
       justify-self: end;
       inline-size: clamp(364px, calc(100%/2), 491px);
-
   }
 
   .section {
@@ -282,7 +278,6 @@
       display: grid;
       position: relative;
       grid-auto-flow: column;
-
   }
 
   .articles-list {
@@ -339,12 +334,18 @@
       order: 1;
   }
 
+  .page-title {
+      margin-block-start: 170px;
+  }
+
+    .header_title{
+      margin-block-start: 70px;
+  }
+
   .header__theme-menu {
       display: grid;
-      position: absolute;
       justify-self: center;
-      align-self: start;
-      margin-block-start: 20px;
+      margin-block-start: -140px;
   }
 
   .header__theme-menu-list {
@@ -352,10 +353,6 @@
       margin: 0;
       grid-auto-flow: column;
       gap: 10px;
-  }
-
-  .header_title {
-      margin-block-start: 460px;
   }
 
   .main {
