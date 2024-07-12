@@ -53,7 +53,7 @@
 }
 
 .page.theme_light .header__theme-menu-button:hover {
-  border: 1px solid var(--text-color-dark);
+  border: 1px solid rgba(50, 49, 45, 0.4);
 }
 
 .page.theme_light .header__theme-menu-button_active,

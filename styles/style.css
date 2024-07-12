@@ -1,8 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  background-image: url(../images/cover-image-dark.png);
-  background: center cover fixed;
+  background: center/cover fixed url(../images/cover-image-dark.png);
   font-family: var(--font-family);
 }
 
@@ -38,7 +37,7 @@
   position: relative;
   display: grid;
   padding: 10px;
-  align-content: space-between;
+  /* align-content: space-between; */
   min-block-size: 25px;
 }
 
@@ -104,7 +103,11 @@
   border: 1px solid rgba(255, 0, 112, 0.4)
 }
 
-.header__theme-menu-button_active,
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-color);
+  pointer-events: none;
+}
+
 .header__theme-menu-button_active:hover {
   border: 1px solid var(--accent-color);
   pointer-events: none;
@@ -198,7 +201,11 @@
   border-bottom: 2px solid var(--text-color-light);
 }
 
-.section-link:focus,
+.section-link:focus {
+  outline: none;
+  border: 1px solid var(--text-color-light);
+}
+
 .section-link:focus-visible {
   outline: none;
   border: 1px solid var(--text-color-light);
@@ -250,6 +257,7 @@
 
   .decorated-zone {
       padding: 20px;
+      align-content: space-between;
   }
 
   .page-title {
@@ -273,7 +281,12 @@
       margin-block-end: 80px;
   }
 
-  .section-on-concentration,
+  .section-on-concentration {
+      display: grid;
+      position: relative;
+      grid-auto-flow: column;
+  }
+
   .section-on-methods {
       display: grid;
       position: relative;
@@ -324,6 +337,14 @@
 
 @media (width >=1024px) {
 
+  .page {
+    display: grid;
+  }
+
+  .header { 
+    align-content: normal;
+  }
+
   .articles-list-about-reasons {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -335,23 +356,29 @@
   }
 
   .page-title {
-      margin-block-start: 170px;
+     align-self: end;
+     grid-column: span 2;
+     margin-block-start: 150px;
   }
 
     .header_title{
+      align-self: end;
+      grid-column: span 2;
       margin-block-start: 70px;
   }
 
   .header__theme-menu {
-      display: grid;
-      justify-self: center;
-      margin-block-start: -140px;
+      justify-self: end;
+      align-self: start;
+      margin: 0;
+      grid-row: 1;
+      margin-inline-end: -20px;
   }
 
   .header__theme-menu-list {
       display: grid;
-      margin: 0;
       grid-auto-flow: column;
+      justify-self: center;
       gap: 10px;
   }
 
@@ -363,11 +390,22 @@
       padding: 0;
   }
 
-  .section-title {
-      min-width: 315px;
+  .section-title{
+    min-width: 315px;
   }
 
   .articles-list {
       margin-inline-start: 50px;
   }
+
+  .decorated-zone::after {
+    align-self: end;
+  } 
+
+  .decorated-zone::before {
+    display: grid;
+    grid-row: 1;
+    order: 1;
+  }
+
 }
